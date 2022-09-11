@@ -1,29 +1,21 @@
-# Interaktif Game Cerdas 
+# Interaktif Game Cerdas : Pengenalan Website untuk Kelas 5 Sekolah Dasar
 
 ## Permasalahan
-- Banyak yang buang sampah sembarangan di sekitar Cipadung
+- Anak jaman sekarang bisanya main ff mulu. Udah tau jadi pro player teh susah pisan
 
 ## Rancangan Solusi
-- Bikin aplikaasi yang foto, laporin, tag koordinat, dapet uang receh
-- Kalo user foto n laporin dia dapet uang receh, 1000 per foto yg valid
-- Ngelaporinnya ke dinas kebersihan kota Bandung
-  - ke polisi juga
-  - ke kecamatan
+- Aplikasi web berupa game tanya jawab, seperti puzzle kata dengan istilah website, dll.
 
 ## Use Case
-- User warga bisa melakukan registrasi mandiri menggunakan NIK dan KTP
-- User warga bisa melaporkan menggunakan foto, koordinat
-- User warga bisa melihat penghasilan hari ini
-- User dinas bisa melihat trend laporan per hari dalam sebulan
-- User dinas bisa mengelola pencairan rupiah
+- User bisa mengakses cerita pada website
+- User bisa melakukan input dan berinteraksi dengan website
 
 ## Struktur Data
 
 ### User
 Atribut|Tipe Data|Contoh
 ---|---|---
-ID | integer | 23
-username | string | yayan
+ID | integer | 12
+username | string | james
 
 ## UX Wireframe
-![judul](https://dpbnri2zg3lc2.cloudfront.net/en/wp-content/uploads/old-blog-uploads/mapping-out-a-user-flow-by-hand.jpg)
