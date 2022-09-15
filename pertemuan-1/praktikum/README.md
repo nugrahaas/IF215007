@@ -46,33 +46,81 @@
 
 
     <table border="1px solid black" cellspacing="0" cellpadding="10px" align="center">
-        <tr>
-            <td>No</td>
-            <td>NIM</td>
-            <td>Nama Lengkap</td>
-            <td>Jurusan</td>
-        </tr>
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>NIM</th>
+                <th>Nama Lengkap</th>
+                <th>Jurusan</th>
+            </tr>
+        </thead>
+        <tbody id="tbody1">
+            <tr>
+                
+            </tr>
+        </tbody>
+
     </table>
 
     <script>
+
+        function tampilkanData(){
+            const dataSaved = localStorage.getItem("dataSaved");
+            const dataSavedObjectArray = JSON.parse(dataSaved);
+            console.log("data : ", dataSavedObjectArray);
+
+            const tabel = document.getElementById("tbody1");
+            let isiTabel = ``;
+
+            dataSavedObjectArray.foreach(function(dataSavedObject, index){
+                isiTabel += `
+                    <tr>
+                        <td>${index + 1}</td>
+                        <td>${dataSavedObject.nim}</td>
+                        <td>${dataSavedObject.nama}</td>
+                        <td>${dataSavedObject.jurusan}</td>
+                    </tr>
+                    `;
+            });
+
+            tabel.innerHTML = isiTabel;
+        }
+
         var inputNIM = document.getElementsByName("nim");
         var inputNama = document.getElementsByName("nama-lengkap");
         var inputJurusan = document.getElementsByName("jurusan");
         var submitBtn = document.getElementById("submit");
 
-        submitBtn.onmouseenter = function(perwakilanEvent) {
-            const pesan = "tiati kepencet";
-            alert(pesan);
-        }
-
-        submitBtn.onclick = function(perwakilanEvent) {
-            const nama = inputNama.value;
+        submitBtn.onclick = function() {
             const nim = inputNIM.value;
+            const nama = inputNama.value;
             const jurusan = inputJurusan.value;
             
             const pesan = "data $(nama) telah ditambahkan"
             
+            const data = {
+                nim,
+                nama,
+                jurusan,
+            };
 
+            alert(pesan);
+            console.log(data);
+
+            const dataSaved = localStorage.getItem("dataSaved");
+            const dataSavedObjectArray = JSON.parse(dataSaved);
+
+            if (dataSaved === null) {
+                localStorage.setItem("dataSaved", JSON.stringify([data]));
+            }
+            else{
+                dataSavedObjectArray.push(data);
+                localStorage.setItem("dataSaved", JSON.stringify(dataSavedObjectArray));
+            }
+
+            console.log("data tersimpan", dataSaved);
+            console.log("dataSavedObjectArray", dataSavedObjectArray);
+            tampilkanData();
         }
 
     </script>
