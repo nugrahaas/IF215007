@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="POST" action="http://localhost:3000/penduduk">
+        <table width="50%" cellpadding="2" align="center">
+            <tr>
+                <td colspan="2"><h3>Form Tambah Mahasiswa</h3></td>
+            </tr>
+            <tr>
+                <td>NIM</td>
+                <td><input type="text" id="nim" size="10"><br/>
+                    <div class="note">NIM wajib diisi</div>
+                </td>
+            </tr>
+            <tr>
+                <td> Nama Lengkap</td>
+                <td><input type="text" id="nama" size="30"><br />
+                    <div class="note">Nama maksimal 30 karakter</div>
+                </td>
+            </tr>
+            <tr>
+                <td>Jurusan</td>
+                <td>
+                    <select id="jurusan">
+                        <option value = "Teknik Informatika">Teknik Informatika</option>
+                        <option value = "Teknik Elektro">Teknik Elektro</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input id="submitBtn" type="submit" value="Tambah Mahasiswa">
+                    <input type="reset" value="Batal">
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <br><br><br><br>
+
+
+    <table border="1px solid black" cellspacing="0" cellpadding="10px" align="center">
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>NIM</th>
+                <th>Nama Lengkap</th>
+                <th>Jurusan</th>
+            </tr>
+        </thead>
+        <tbody id="tbody1">
+            
+        </tbody>
+
+    </table>
+
+    <script>
+
+        
+
+
+        var inputNIM = document.getElementById("nim");
+        var inputNama = document.getElementById("nama");
+        var inputJurusan = document.getElementById("jurusan");
+        var submitBtn = document.getElementById("submitBtn");
+
+        function tampilkanData(){
+            const dataSaved = localStorage.getItem("dataSaved");
+            var dataSavedObject = JSON.parse(dataSaved);
+            if (dataSavedObject === null) {
+                dataSavedObject = [];
+            }
+
+
+            const tabel = document.getElementById("tbody1");
+            var isiTabel = ``;
+
+            dataSavedObject.forEach(function(dataSavedObjectArray, index){
+                isiTabel += `
+                    <tr>
+                        <th scope="row">${index + 1}</th>
+                        <td>${dataSavedObjectArray.nim}</td>
+                        <td>${dataSavedObjectArray.nama}</td>
+                        <td>${dataSavedObjectArray.jurusan}</td>
+                    </tr>
+                    `;
+            });
+
+                tabel.innerHTML = isiTabel;
+        }
+
+        tampilkanData();    
+
+        submitBtn.onclick = function(e) {
+            const nim = inputNIM.value;
+            const nama = inputNama.value;
+            const jurusan = inputJurusan.value;
+            
+            const pesan = "data " + nama + nim + jurusan  + " telah ditambahkan";
+            
+            const data = {
+                nim,
+                nama,
+                jurusan,
+            };
+
+            alert(pesan);
+
+            const dataSaved = localStorage.getItem("dataSaved");
+            const dataSavedObjectArray = JSON.parse(dataSaved);
+
+            if (dataSaved === null) {
+                localStorage.setItem("dataSaved", JSON.stringify([data]));
+            }
+            else{
+                dataSavedObjectArray.push(data);
+                localStorage.setItem("dataSaved", JSON.stringify(dataSavedObjectArray));
+            }
+
+            console.log("data tersimpan", dataSaved);
+            console.log("dataSavedObjectArray", dataSavedObjectArray);
+            tampilkanData();
+        };
+
+    </script>
+
+
+
+
+
+</body>
+</html>
