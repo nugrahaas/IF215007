@@ -1,21 +1,29 @@
-# Interaktif Game Cerdas : Pengenalan Website untuk Kelas 5 Sekolah Dasar
+# Company Profile : Produk 3D dengan Three JS
 
 ## Permasalahan
-- Anak jaman sekarang bisanya main ff mulu. Udah tau jadi pro player teh susah pisan
+- Akhir-akhir ini saya merasa bosan dengan tampilan beberapa company profile yang itu-itu saja tampilan produknya. Saya melihat beberapa tampilan dengan JavaScript yang menggunakan konsep 3D dan bagus.
 
 ## Rancangan Solusi
-- Aplikasi web berupa game tanya jawab, seperti puzzle kata dengan istilah website, dll.
+- Aplikasi web company profile dengan tampilan produk 3D supaya user bisa melihat produk lebih detail.
 
 ## Use Case
-- User bisa mengakses cerita pada website
-- User bisa melakukan input dan berinteraksi dengan website
+- User bisa mengakses website untuk melihat profile dan dashboard kece.
+- Admin bisa input untuk melakukan B.I. yang diperlukan
 
 ## Struktur Data
 
-### User
+### Admin
 Atribut|Tipe Data|Contoh
 ---|---|---
 ID | integer | 12
 username | string | james
+password | string | jameshandsome
+
+### Transaksi
+Atribut|Tipe Data|Contoh
+---|---|---
+ID | integer | 12
+nama | string | T-001
+tanggal | date | "2019-09-09"
 
 ## UX Wireframe
