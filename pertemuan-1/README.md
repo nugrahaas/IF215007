@@ -27,3 +27,7 @@ nama | string | T-001
 tanggal | date | "2019-09-09"
 
 ## UX Wireframe
+![UX Home Page](https://user-images.githubusercontent.com/46425489/191411250-cddd47df-9e8b-4b7e-8e35-b3ec1dc5a27b.png)
+
+## UI Design
+![Home Page](https://user-images.githubusercontent.com/46425489/191411920-5e472db9-5431-4d9a-824a-1325b4b279cb.png)
