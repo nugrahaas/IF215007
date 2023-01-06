@@ -22,20 +22,15 @@ Mulai dari setting camera, lighting, dan berbagai kode lainnya yang saya pun mas
 - Ketiga-tiga kita tinggal yang namanya ngoding sesuai ketentuan standar dari three js nya, yaitu `renderer`, `scene`, `camera`, dan terakhir `controls` yang kita perlukan.
 - Sehabis itu, kita bisa langsung yang namanya konfigurasi atau ibarat kata disetting dulu biar bebeledagan. Setting gimana sih maksudnya? Nih daripada bingung aku kasih contoh kepada kalian semua.
 
-`
+- `
 renderer.setSize( window.innerWidth, window.innerHeight );
-`
+` Itu untuk ngatur bakal segimana ukuran renderer nya.
 
-Itu untuk ngatur bakal segimana ukuran renderer nya.
-
-`
+- `
 camera.position.set( 1, 1, 60 );
 controls.update();
-`
-
-Untuk setting posisi kamera nya. Kalo sudah update posisi kamera secara manual, jangan lupa untuk selalu memanggil kode dibawahnya yaitu update().
-Sehabis itu jangan lupa juga setting lighting nya supaya kelihatan lebih _aesthetic_ dan real. Terakhir tinggal :
-
+` Untuk setting posisi kamera nya. Kalo sudah update posisi kamera secara manual, jangan lupa untuk selalu memanggil kode dibawahnya yaitu update().
+- Sehabis itu jangan lupa juga setting lighting nya supaya kelihatan lebih _aesthetic_ dan real. Terakhir tinggal :
 `
 renderer.render( scene, camera );
 `
