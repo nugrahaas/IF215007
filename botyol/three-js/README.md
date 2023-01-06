@@ -12,8 +12,11 @@ Mulai dari setting camera, lighting, dan berbagai kode lainnya yang saya pun mas
 - Kedua-dua kalo kita menggunakan cara npm, tambahkan kode berikut di file .html kalian
 
 `<script src="node_modules/three/build/three.js"></script>`
+
 `<script src="node_modules/three/examples/js/controls/OrbitControls.js"></script>`
+
 `<script src="node_modules/three/examples/js/loaders/GLTFLoader.js"></script>`
+
 `<script src="node_modules/three/examples/js/loaders/RGBELoader.js"></script>`
 
 - Ketiga-tiga kita tinggal yang namanya ngoding sesuai ketentuan standar dari three js nya, yaitu `renderer`, `scene`, `camera`, dan terakhir `controls` yang kita perlukan.
